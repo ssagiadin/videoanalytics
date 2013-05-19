@@ -1,0 +1,2 @@
+serviceClass: sagivideo.client.GreetingService
+path: DCBEDC596469347493C76E78D2674408.gwt.rpc

@@ -1,0 +1,251 @@
+/* generic margin and padding "neutralizer" */
+* { margin:0; padding:0; } 
+
+/* set initial values for body */
+ body { 
+  font-family: verdana,arial,sans-serif;	/* font settings */
+  font-size: 100%;				/* for em sizing */
+  margin: 1em 4em 1em 2em; 			/* top left right bottom */
+  background-color: #300000;			/* background color of page */
+}
+
+.niceform {
+  color: white;
+  margin: 2em auto 0;
+  display: table;
+  -moz-border-radius: 15px;
+  border-radius: 15px;
+  background-color: #500000;
+  padding: 1em;
+}
+
+/* the overlayed element */
+.form_overlay {
+	
+	/* must be initially hidden */
+	display:none;
+	
+	/* place overlay on top of other elements */
+	z-index:10000;
+	
+	/* styling */
+	background-color: #8E0202;
+	width:400px;	
+	min-height:200px;
+	border:1px solid #666;
+	-moz-border-radius: 15px;
+	border-radius: 15px;
+	padding: 0.5em;
+	/* CSS3 styling for latest browsers */
+	-moz-box-shadow:0 0 90px 5px #000;
+	-webkit-box-shadow: 0 0 90px #000;	
+}
+
+/* close button positioned on upper right corner */
+.form_overlay .close {
+	background-image:url(/images/close.png);
+	position:absolute;
+	right:-15px;
+	top:-15px;
+	cursor:pointer;
+	height:35px;
+	width:35px;
+}
+
+.url_overlay {
+	
+	/* must be initially hidden */
+	display:none;
+	
+	/* place overlay on top of other elements */
+	z-index:10000;
+	
+	/* styling */
+	color: white;
+	background-color: #8E0202;
+	width:350px;	
+	height:40px;
+	border:1px solid #666;
+	padding: 0.5em;
+	/* CSS3 styling for latest browsers */
+	-moz-box-shadow:0 0 90px 5px #000;
+	-webkit-box-shadow: 0 0 90px #000;	
+}
+
+.url_overlay .close {
+	background-image:url(/images/close.png);
+	position:absolute;
+	right:-15px;
+	top:-15px;
+	cursor:pointer;
+	height:35px;
+	width:35px;
+}
+
+.chart_overlay {
+	
+	/* must be initially hidden */
+	display:none;
+	
+	/* place overlay on top of other elements */
+	z-index:10000;
+	
+	/* styling */
+	background-color: white;
+	width:750px;	
+	height:550px;
+	-moz-border-radius: 15px;
+	border:1px solid #666;
+	padding: 0.5em;
+	/* CSS3 styling for latest browsers */
+	-moz-box-shadow:0 0 90px 5px #000;
+	-webkit-box-shadow: 0 0 90px #000;	
+}
+
+.chart_overlay .close {
+	background-image:url(/images/close.png);
+	position:absolute;
+	right:-15px;
+	top:-15px;
+	cursor:pointer;
+	height:35px;
+	width:35px;
+}
+
+.descr {
+	width: 200px;
+}
+
+.infotext {
+	width: 250px;	
+}
+
+#jump, #interaction {
+	width: 40px;	
+}
+
+#header {
+	text-align: center;
+}
+
+ht {
+	color:rgb(0,0,255);
+}
+
+p.ex {
+	color:#ffffff;
+}
+
+si {
+	color:#ffffff; 
+/*	position:relative; 
+	left:70px;*/
+}
+
+r.dashed1 {
+	border-style:dashed; 
+	border-color:#701010; 
+	border-width:3px;
+}
+
+r.dashed2 {
+	border-style:solid;
+	border-color:#600000;
+	border-width:3px;
+}
+
+r.ex {
+	color:#fdfdfd;
+	font-family:"Times New Roman";
+	font-size:11px;
+}
+
+a:link {
+	color:#FFFF00;
+}    /* unvisited link */
+
+a:visited {
+	color:#00FFFF;
+} /* visited link */
+
+a:hover {
+	color:#FF0000;
+}   /* mouse over link */
+
+a:active {
+	color:#0000FF;
+}  /* selected link */
+
+#information {
+	margin: 0 auto;
+	text-align: center;
+}
+
+#signin {
+	color: #ffffff; 
+	font-size:  22px; 
+	font-family: arial; 
+	font-style: bold;
+	text-align: center;
+	padding: 1em 0;
+}
+
+.pbutton {
+	display: none;
+}
+
+.hidden {
+	display: none;
+}
+
+#content {
+	margin: 5px;
+	background-color: #500000;
+	padding-top: 5px;
+}
+
+#content1 {
+	margin: 5px;
+	background-color: #500000;
+	padding-top: 5px;
+	float: left;
+}
+
+#leftpanel {
+	margin: 0;
+	float: left;
+	text-align: center;
+	padding: 0.5em;
+}
+
+#rightpanel {
+	margin: 0;
+	float: left;
+	text-align: center;
+	padding: 0.5em;
+}
+
+#startlink {
+	text-decoration: none;
+}
+
+#player {
+	border: 1px solid black;
+}
+
+#playerdiv {
+	text-align: center;
+	padding: 1em;
+}
+
+a#startlink:link {
+	color: transparent;
+}    /* unvisited link */
+
+a#startlink:visited {
+	color: transparent;
+} /* visited link */
+
+a#startlink:hover {
+	color: transparent;
+}   /* mouse over link */

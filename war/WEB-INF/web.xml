@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://java.sun.com/xml/ns/javaee 
+              http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd"
+         version="2.5"
+         xmlns="http://java.sun.com/xml/ns/javaee">
+
+  <!-- Servlets -->
+  <servlet>
+    <servlet-name>greetServlet</servlet-name>
+    <servlet-class>sagivideo.server.GreetingServiceImpl</servlet-class>
+  </servlet>
+  
+  <servlet-mapping>
+    <servlet-name>greetServlet</servlet-name>
+    <url-pattern>/sagivideo/greet</url-pattern>
+  </servlet-mapping>
+
+	<servlet>
+		<servlet-name>welcome</servlet-name>
+		<servlet-class>sagivideo.WelcomeServlet</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>welcome</servlet-name>
+		<url-pattern>/welcome</url-pattern>
+	</servlet-mapping>
+	<servlet>
+		<servlet-name>researchervideos</servlet-name>
+		<servlet-class>sagivideo.ResearcherVideosServlet</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>researchervideos</servlet-name>
+		<url-pattern>/researcher_videos</url-pattern>
+	</servlet-mapping>
+	<servlet>
+		<servlet-name>processaction</servlet-name>
+		<servlet-class>sagivideo.ProcessActionServlet</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>processaction</servlet-name>
+		<url-pattern>/process_action</url-pattern>
+	</servlet-mapping>
+	<!-- Default page to serve -->
+  <welcome-file-list>
+    <welcome-file>welcome</welcome-file>
+  </welcome-file-list>
+
+</web-app>

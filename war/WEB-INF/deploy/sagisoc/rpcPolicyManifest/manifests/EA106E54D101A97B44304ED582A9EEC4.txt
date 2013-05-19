@@ -1,0 +1,2 @@
+serviceClass: sagisoc.client.GreetingService
+path: B19B22062C26D32694A7D4B4B351C97F.gwt.rpc
