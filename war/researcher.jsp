@@ -7,7 +7,7 @@
 	String user = request.getParameter("userid");
 		
 	// Look for researcher videos
-	tables.run("SELECT ROWID, VideoURL, VideoDescr, Controls, Height, Width FROM 3464664 WHERE ResearcherId='" + user + "'", useEncId);
+	tables.run("SELECT ROWID, VideoURL, VideoDescr, Controls, Height, Width FROM 16cXghYm6nEiaoHgoGuUZdK8HncU7esLb4Fi2M8Q WHERE ResearcherId='" + user + "'", useEncId);
 %>
 <!DOCTYPE html>
 <html>

@@ -57,6 +57,8 @@ public class WelcomeServlet extends HttpServlet {
 	    	} catch (AuthenticationException e) {
 	    		resp.sendRedirect("/autherror.html");
 	    	} catch (ServiceException e) {
+	    		System.out.println(e.getCodeName());
+	    		System.out.println(e.getMessage());
 	    		resp.sendRedirect("/fusionerror.html");
 	    	}
 	    } else { // User not logged in yet

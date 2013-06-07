@@ -30,17 +30,57 @@ import java.util.Iterator;
  *   - opencsv
  *
  */
+/* 
+ * The VideoAnalytics Service the following tables which keep its data.
+ *
+ * Table name: Researchers
+ * Description: This table holds the people that can register videos
+ * Fields:
+ * 	  FieldName		Description						Type
+ * 	  Mail          email address                   Text
+ *    Name          Real name                       Text
+ * 
+ * Table name: Experiments
+ * Description: This table holds descriptions of the videos
+ * Fields:
+ * 	  FieldName		Description						Type
+ * 	  ResearcherId  Id from Researchers table       Number
+ *    VideoURL      YouTube video URL               Text
+ *    VideoDescr    Video description               Text
+ *    Controls      Video controls (bit field)      Number
+ *    Height        Video player height             Number
+ *    Width         Video player width              Number
+ *    
+ * Table name: SagisocUserBase
+ * Description: This table holds the video transactions
+ * Fields:
+ * 	  FieldName		  Description				      Type
+ * 	  VideoId         Id from Experiments table       Number
+ *    User            User email                      Text
+ *    Time            Video time of the transaction   Number
+ *    TransactionId   Transaction code                Number
+ *    TransactionTime Time of the transaction         Date/Time
+ * 
+ * Table name: SagisocTimeline
+ * Description: This is actually a view of the previous table
+ * Fields:
+ * 	  FieldName		  Description				      Type
+ * 	  VideoId         Id from Experiments table       Number
+ *    Time            Video time of the transaction   Number
+ *    TransactionId   Transaction code                Number
+ */
 public class FusionApi {
 
- public static final String RESEARCHERS = "3464663";
- public static final String EXPERIMENTS = "3464664";
- public static final String DATA = "2292054";
+ public static final String RESEARCHERS = "1c1Xq-bI-JSVgk8ZexDDRGD_pqbUcpHNLJyQ1o5M";
+ public static final String EXPERIMENTS = "16cXghYm6nEiaoHgoGuUZdK8HncU7esLb4Fi2M8Q";
+ public static final String DATA = "1vbKrgWK-IpUTus2d18ljgUkcWQoID4XkOPtJAHU";
+ 
  /**
   * Google Fusion Tables API URL. 
   * All requests to the Google Fusion Tables service begin with this URL.
   */
- private static final String SERVICE_URL = "https://www.google.com/fusiontables/api/query";
-
+ private static final String SERVICE_URL = "https://www.googleapis.com/fusiontables/v1/query";
+ private static final String API_KEY = "AIzaSyD-OGDQ9J7GpJgVPHZlCH5ursqaNpnDOxk";
  private QueryResults last;
  /**
   * Service to handle requests to Google Fusion Tables.
@@ -81,7 +121,7 @@ public class FusionApi {
   * @throws AuthenticationException when the authentication fails
   */
  public FusionApi() throws AuthenticationException {
-   this("ssagiadin@gmail.com", "@!69Sp03@%");
+   this("ssagiadin@gmail.com", "");
  }
 
  /**
@@ -104,13 +144,13 @@ public class FusionApi {
    if (lowercaseQuery.startsWith("select") ||
        lowercaseQuery.startsWith("describe") ||
        lowercaseQuery.startsWith("show")) {
-     URL url = new URL(SERVICE_URL + "?sql=" + encodedQuery + "&encid=" + isUsingEncId);
+     URL url = new URL(SERVICE_URL + "?sql=" + encodedQuery + "&key=" + API_KEY + "&alt=csv");
      request = service.getRequestFactory().getRequest(RequestType.QUERY, url,
          ContentType.TEXT_PLAIN);
      System.out.println(query);
    } else {
      // Otherwise, run a POST request.
-     URL url = new URL(SERVICE_URL + "?encid=" + isUsingEncId);
+     URL url = new URL(SERVICE_URL + "?key=" + API_KEY);
      request = service.getRequestFactory().getRequest(RequestType.INSERT, url,
          new ContentType("application/x-www-form-urlencoded"));
      OutputStreamWriter writer = new OutputStreamWriter(request.getRequestStream());
